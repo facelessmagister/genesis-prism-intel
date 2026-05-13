@@ -6,75 +6,91 @@
 <title>Clients — Prism Intel</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --color-primary: #7C3AED;
-  --color-primary-dark: #6D28D9;
-  --color-accent: #A78BFA;
-  --color-surface: #0F0F1A;
-  --color-surface-raised: #16162A;
-  --color-border: #2A2A3E;
-  --color-text: #E2E8F0;
-  --color-text-muted: #94A3B8;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6;
-  background-color: var(--color-surface); color: var(--color-text); -webkit-font-smoothing: antialiased; padding: 32px 24px; }
-h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
-.container { max-width: 880px; margin: 0 auto; }
-.header { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--color-border); }
-.header-icon { width: 32px; height: 32px; background: var(--color-primary); border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 14px; color: white; }
-.header-title { font-size: 18px; font-weight: 700; }
-.back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); text-decoration: none;
-  font-size: 13px; font-weight: 500; margin-bottom: 20px; }
-h1 { font-size: 32px; margin-bottom: 8px; }
-.desc { color: var(--color-text-muted); font-size: 16px; margin-bottom: 32px; }
+:root { --color-primary:#7C3AED; --color-accent:#A78BFA; --color-surface:#0F0F1A; --color-surface-raised:#16162A; --color-border:#2A2A3E; --color-text:#E2E8F0; --color-text-muted:#94A3B8; }
+* { margin:0;padding:0;box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.6; background:var(--color-surface); color:var(--color-text); -webkit-font-smoothing:antialiased; padding:32px 24px; }
+h1,h2 { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; }
+.container { max-width:880px; margin:0 auto; }
+.header { display:flex; align-items:center; gap:10px; margin-bottom:32px; padding-bottom:20px; border-bottom:1px solid var(--color-border); }
+.header-icon { width:32px; height:32px; background:var(--color-primary); border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Plus Jakarta Sans'; font-weight:800; font-size:14px; color:white; }
+.header-title { font-size:18px; font-weight:700; }
+.back { display:inline-flex; align-items:center; gap:6px; color:var(--color-accent); text-decoration:none; font-size:13px; font-weight:500; margin-bottom:20px; }
+h1 { font-size:32px; margin-bottom:8px; }
+.desc { color:var(--color-text-muted); font-size:15px; margin-bottom:32px; }
 
-.client-list { display: flex; flex-direction: column; gap: 16px; }
-.client-row {
-  display: flex; align-items: center; gap: 20px; padding: 20px 24px;
-  background: var(--color-surface-raised); border: 1px solid var(--color-border); border-radius: 12px;
-  text-decoration: none; color: inherit; transition: border-color 150ms ease, box-shadow 150ms ease;
-}
-.client-row:hover { border-color: rgba(124, 58, 237, 0.4); box-shadow: 0 4px 24px rgba(124, 58, 237, 0.06); }
-.client-letter { width: 44px; height: 44px; border-radius: 12px; background: var(--color-primary);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Plus Jakarta Sans'; font-weight: 700; font-size: 18px; color: white; flex-shrink: 0; }
-.client-info { flex: 1; }
-.client-name { font-family: 'Plus Jakarta Sans'; font-size: 16px; font-weight: 700; margin-bottom: 2px; }
-.client-tagline { font-size: 13px; color: var(--color-text-muted); }
-.client-count { font-size: 12px; font-weight: 600; color: var(--color-accent); }
+.client-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:20px; }
+.client-card { background:var(--color-surface-raised); border:1px solid var(--color-border); border-radius:12px; padding:28px; text-decoration:none; color:inherit; transition:border-color 150ms ease; }
+.client-card:hover { border-color:rgba(124,58,237,0.4); }
+.client-card-header { display:flex; align-items:center; gap:16px; margin-bottom:16px; }
+.client-avatar { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-family:'Plus Jakarta Sans'; font-weight:700; font-size:18px; color:white; flex-shrink:0; }
+.client-name { font-family:'Plus Jakarta Sans'; font-size:18px; font-weight:700; }
+.client-tagline { font-size:13px; color:var(--color-text-muted); }
+.client-metrics { display:flex; gap:24px; margin-top:16px; }
+.client-metric .cm-val { font-family:'Plus Jakarta Sans'; font-size:20px; font-weight:700; color:var(--color-accent); }
+.client-metric .cm-label { font-size:12px; color:var(--color-text-muted); }
 
-.footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--color-border);
-  color: var(--color-text-muted); font-size: 12px; margin-top: 40px; }
-@media (max-width: 600px) { body { padding: 20px 16px; } }
+.footer { text-align:center; padding-top:40px; border-top:1px solid var(--color-border); color:var(--color-text-muted); font-size:12px; margin-top:40px; }
 </style>
 </head>
 <body>
 <div class="container">
-  <a class="back" href="../">← Back to Prism Intel</a>
+  <a class="back" href="../">← Home</a>
   <div class="header">
     <div class="header-icon">PI</div>
     <span class="header-title">Prism Intel — Clients</span>
   </div>
-  <h1>All Clients</h1>
-  <p class="desc">Organizations under continuous competitive intelligence monitoring.</p>
 
-  <div class="client-list">
-    <a href="anthropic/" class="client-row">
-      <div class="client-letter">A</div>
-      <div class="client-info">
-        <div class="client-name">Anthropic</div>
-        <div class="client-tagline">Frontier AI — Enterprise-First Safety</div>
-      </div>
-      <div class="client-count">2 reports · monitoring active</div>
-    </a>
-  </div>
+  <h1>Clients</h1>
+  <p class="desc">All monitored organizations.</p>
+
+  <div class="client-grid">
+      <a href="anthropic/" class="client-card">
+        <div class="client-card-header">
+          <div class="client-avatar" style="background:#7C3AED">A</div>
+          <div>
+            <div class="client-name">Anthropic</div>
+            <div class="client-tagline">Frontier AI — Enterprise-First Safety</div>
+          </div>
+        </div>
+        <div class="client-metrics">
+          <div class="client-metric"><div class="cm-val">3</div><div class="cm-label">Pieces</div></div>
+          <div class="client-metric"><div class="cm-val">1</div><div class="cm-label">Simulations</div></div>
+          <div class="client-metric"><div class="cm-val">Active</div><div class="cm-label">Status</div></div>
+        </div>
+      </a>
+      <a href="maybank/" class="client-card">
+        <div class="client-card-header">
+          <div class="client-avatar" style="background:#FDE047">M</div>
+          <div>
+            <div class="client-name">Maybank</div>
+            <div class="client-tagline">Malaysia's Largest Bank — ASEAN Digital Finance</div>
+          </div>
+        </div>
+        <div class="client-metrics">
+          <div class="client-metric"><div class="cm-val">1</div><div class="cm-label">Pieces</div></div>
+          <div class="client-metric"><div class="cm-val">0</div><div class="cm-label">Simulations</div></div>
+          <div class="client-metric"><div class="cm-val">Active</div><div class="cm-label">Status</div></div>
+        </div>
+      </a>
+      <a href="nvidia/" class="client-card">
+        <div class="client-card-header">
+          <div class="client-avatar" style="background:#76B900">N</div>
+          <div>
+            <div class="client-name">Nvidia</div>
+            <div class="client-tagline">AI Chip Monopoly — Data Center & Cloud Infra</div>
+          </div>
+        </div>
+        <div class="client-metrics">
+          <div class="client-metric"><div class="cm-val">0</div><div class="cm-label">Pieces</div></div>
+          <div class="client-metric"><div class="cm-val">0</div><div class="cm-label">Simulations</div></div>
+          <div class="client-metric"><div class="cm-val">Active</div><div class="cm-label">Status</div></div>
+        </div>
+      </a>
+    </div>
 
   <div class="footer">
     Prism Intel · A Genesis business ·
-    <a href="https://github.com/facelessmagister" style="color: var(--color-accent);" target="_blank">github.com/facelessmagister</a>
+    <a href="https://github.com/facelessmagister" style="color:var(--color-accent);" target="_blank">github.com/facelessmagister</a>
   </div>
 </div>
 </body>

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maybank Intelligence Hub — Prism Intel</title>
+<title>Nvidia Intelligence Hub — Prism Intel</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --color-primary: #FDE047;
-  --color-accent: #FDE047;
+  --color-primary: #76B900;
+  --color-accent: #76B900;
   --color-surface: #0F0F1A;
   --color-surface-raised: #16162A;
   --color-border: #2A2A3E;
@@ -96,31 +96,26 @@ h1 { font-size: 32px; margin-bottom: 10px; }
 
   <div class="hero">
     <div class="hero-badge">Monitoring Active · 6h Heartbeat</div>
-    <h1>Maybank</h1>
-    <p class="desc">Malaysia's Largest Bank — ASEAN Digital Finance Leader · All intelligence organized chronologically.</p>
+    <h1>Nvidia</h1>
+    <p class="desc">AI Chip Monopoly — Data Center & Cloud Infrastructure · All intelligence organized chronologically.</p>
 
     <div class="meta-grid">
-      <div class="meta-card"><div class="val" style="color:#FDE047">RM115B</div><div class="lab">Market Cap</div></div>
-      <div class="meta-card"><div class="val" style="color:#FDE047">1</div><div class="lab">Pieces</div></div>
-      <div class="meta-card"><div class="val" style="color:#FDE047">Active</div><div class="lab">Status</div></div>
+      <div class="meta-card"><div class="val" style="color:#76B900">$2.8T</div><div class="lab">Market Cap</div></div>
+      <div class="meta-card"><div class="val" style="color:#76B900">0</div><div class="lab">Pieces</div></div>
+      <div class="meta-card"><div class="val" style="color:#76B900">Active</div><div class="lab">Status</div></div>
     </div>
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" data-tab="all">All (1)</button>
+    <button class="tab-btn active" data-tab="all">All (0)</button>
     <button class="tab-btn " data-tab="brief">Briefs (0)</button>
     <button class="tab-btn " data-tab="daily">Daily (0)</button>
-    <button class="tab-btn " data-tab="weekly">Weekly (1)</button>
+    <button class="tab-btn " data-tab="weekly">Weekly (0)</button>
     <button class="tab-btn " data-tab="simulation">Simulations (0)</button>
   </div>
 
   <div class="tab-panel active" id="tab-all">
     <div class="report-list">
-      <a href="../../intel/maybank/exec-brief-2026-05-12.html" class="report-item">
-        <span class="report-date">May 12, 2026</span>
-        <span class="report-tag tag-weekly">📰 Weekly Report</span>
-        <span class="report-title">Executive Brief: Maybank — ASEAN Banking Leadership in Play · Prism Intel</span>
-      </a>
     </div>
   </div>
   <div class="tab-panel" id="tab-brief">
@@ -148,12 +143,15 @@ h1 { font-size: 32px; margin-bottom: 10px; }
     </div>
   </div>
   <div class="tab-panel" id="tab-weekly">
-    <div class="report-list">
-      <a href="../../intel/maybank/exec-brief-2026-05-12.html" class="report-item">
-        <span class="report-date">May 12, 2026</span>
-        <span class="report-tag tag-weekly">📰 Weekly Report</span>
-        <span class="report-title">Executive Brief: Maybank — ASEAN Banking Leadership in Play · Prism Intel</span>
-      </a>
+    <div class="empty-state">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <div style="font-weight:600;margin-bottom:4px;">No Weekly Reports Yet</div>
+      <div>Content will appear after the next run.</div>
     </div>
   </div>
   <div class="tab-panel" id="tab-simulation">
