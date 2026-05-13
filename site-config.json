@@ -1,9 +1,9 @@
 {
-  "site_url": "https://genesis-prism-intel.vercel.app",
-  "production_url": "https://genesis-prism-intel.vercel.app",
-  "vercel_project_id": "prj_UqDYggi0rWnwCKNwYP8SOdZGExwL",
+  "site_url": "https://prism-intel.vercel.app",
+  "production_url": "https://prism-intel.vercel.app",
+  "vercel_project_id": "prj_CJ3bSnKQwdWaeApVa297Bcrwe0fM",
   "vercel_org": "facelessmagister-9996s-projects",
-  "project_name": "genesis-prism-intel",
+  "project_name": "prism-intel",
   "github_repo": "facelessmagister/genesis-prism-intel",
   "github_repo_id": 1237247636,
   "deployed_at": "2026-05-13",
