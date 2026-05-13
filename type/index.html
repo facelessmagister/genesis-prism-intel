@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Types — Prism Intel</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #7C3AED;
+  --color-primary-dark: #6D28D9;
+  --color-accent: #A78BFA;
+  --color-surface: #0F0F1A;
+  --color-surface-raised: #16162A;
+  --color-border: #2A2A3E;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6;
+  background-color: var(--color-surface); color: var(--color-text); -webkit-font-smoothing: antialiased; padding: 32px 24px; }
+h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.container { max-width: 880px; margin: 0 auto; }
+.header { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--color-border); }
+.header-icon { width: 32px; height: 32px; background: var(--color-primary); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 14px; color: white; }
+.header-title { font-size: 18px; font-weight: 700; }
+.back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); text-decoration: none;
+  font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+h1 { font-size: 32px; margin-bottom: 8px; }
+.desc { color: var(--color-text-muted); font-size: 16px; margin-bottom: 32px; }
+
+.type-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.type-card {
+  background: var(--color-surface-raised); border: 1px solid var(--color-border);
+  border-radius: 12px; padding: 24px; text-decoration: none; color: inherit;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+.type-card:hover { border-color: rgba(124, 58, 237, 0.4); transform: translateY(-2px); }
+.type-icon { width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px; margin-bottom: 12px;
+}
+.type-brief .type-icon { background: rgba(124, 58, 237, 0.15); color: var(--color-accent); }
+.type-analysis .type-icon { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+.type-weekly .type-icon { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+.type-sim .type-icon { background: rgba(245, 158, 11, 0.15); color: #FBBF24; }
+.type-title { font-family: 'Plus Jakarta Sans'; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.type-desc { font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
+.type-count { margin-top: 12px; font-size: 12px; font-weight: 600; color: var(--color-accent); }
+
+.footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted); font-size: 12px; margin-top: 40px; }
+@media (max-width: 600px) { body { padding: 20px 16px; } .type-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../">← Back to Prism Intel</a>
+  <div class="header">
+    <div class="header-icon">PI</div>
+    <span class="header-title">Prism Intel — Content Types</span>
+  </div>
+  <h1>All Report Types</h1>
+  <p class="desc">Browse intelligence by category across all clients.</p>
+
+  <div class="type-grid">
+    <a href="client-brief/" class="type-card type-brief">
+      <div class="type-icon">📋</div>
+      <div class="type-title">Client Briefs</div>
+      <div class="type-desc">Full intelligence profiles: company fundamentals, funding, products, leadership, competitive position.</div>
+      <div class="type-count">1 available</div>
+    </a>
+    <a href="daily-analysis/" class="type-card type-analysis">
+      <div class="type-icon">📊</div>
+      <div class="type-title">Daily Analyses</div>
+      <div class="type-desc">Day-to-day signal tracking: newsroom scans, competitor moves, threat detection.</div>
+      <div class="type-count">0 available · First: May 8</div>
+    </a>
+    <a href="weekly-report/" class="type-card type-weekly">
+      <div class="type-icon">📰</div>
+      <div class="type-title">Weekly Reports</div>
+      <div class="type-desc">Structured briefings aggregating weekly intelligence with trend analysis.</div>
+      <div class="type-count">0 available · First: May 9</div>
+    </a>
+    <a href="simulation/" class="type-card type-sim">
+      <div class="type-icon">🧪</div>
+      <div class="type-title">Simulations</div>
+      <div class="type-desc">Multi-agent sentiment simulations modeling stakeholder reactions to events.</div>
+      <div class="type-count">1 available</div>
+    </a>
+  </div>
+
+  <div class="footer">
+    Prism Intel · A Genesis business ·
+    <a href="https://github.com/facelessmagister" style="color: var(--color-accent);" target="_blank">github.com/facelessmagister</a>
+  </div>
+</div>
+</body>
+</html>

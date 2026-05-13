@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic Finance Agents — Simulated Market Reaction | Prism Intel</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #7C3AED;
+  --color-primary-dark: #6D28D9;
+  --color-secondary: #475569;
+  --color-accent: #A78BFA;
+  --color-surface: #0F0F1A;
+  --color-surface-raised: #16162A;
+  --color-border: #2A2A3E;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  padding: 32px 24px;
+}
+h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.container { max-width: 720px; margin: 0 auto; }
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+.header-icon {
+  width: 32px; height: 32px;
+  background: var(--color-primary);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 14px; color: white;
+}
+.header-title { font-size: 18px; font-weight: 700; }
+.header-subtitle { font-size: 12px; color: var(--color-text-muted); margin-left: auto; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 4px 12px; border-radius: 100px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid var(--color-border);
+  font-size: 12px; font-weight: 500; color: var(--color-accent);
+  margin-bottom: 16px;
+}
+.badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #10B981; }
+h1 { font-size: 28px; letter-spacing: -0.02em; margin-bottom: 8px; }
+.meta { font-size: 13px; color: var(--color-text-muted); margin-bottom: 28px; }
+.scores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+.score-card {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.score-card .val { font-family: 'Plus Jakarta Sans'; font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+.score-card .label { font-size: 12px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.score-card.pos .val { color: #34D399; }
+.score-card.neu .val { color: #60A5FA; }
+.score-card.neg .val { color: #EF4444; }
+.reactions { margin-bottom: 32px; }
+.reaction {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px; padding: 16px;
+  margin-bottom: 12px;
+}
+.reaction-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.reaction-agent { font-family: 'Plus Jakarta Sans'; font-size: 13px; font-weight: 600; color: var(--color-accent); }
+.reaction-meta { font-size: 11px; color: var(--color-text-muted); }
+.reaction-body { font-size: 14px; line-height: 1.5; }
+.themes { margin-bottom: 32px; }
+.theme-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
+.theme-icon { width: 28px; height: 28px; border-radius: 6px; background: rgba(124,58,237,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; font-weight: 700; color: var(--color-accent); }
+.theme-text { flex: 1; }
+.theme-label { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+.theme-desc { font-size: 13px; color: var(--color-text-muted); }
+.footer { text-align: center; padding-top: 20px; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 12px; }
+.back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); text-decoration: none; font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+@media (max-width: 480px) { .scores { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../../index.html">← Back to Prism Intel</a>
+
+  <div class="header">
+    <div class="header-icon">PI</div>
+    <span class="header-title">Prism Intel</span>
+    <span class="header-subtitle">Simulation Report</span>
+  </div>
+
+  <div class="badge">Simulated Market Reaction</div>
+  <h1>Anthropic Launches 10 Finance AI Agents + Microsoft 365 Integration</h1>
+  <div class="meta">May 7, 2026 · 8 personas · 3 rounds · gpt-oss:120b-cloud</div>
+
+  <div class="scores">
+    <div class="score-card pos"><div class="val">71%</div><div class="label">Positive</div></div>
+    <div class="score-card neu"><div class="val">17%</div><div class="label">Neutral</div></div>
+    <div class="score-card neg"><div class="val">13%</div><div class="label">Negative</div></div>
+  </div>
+
+  <h2 style="font-size: 18px; margin-bottom: 16px;">8-Agent Sentiment Survey — Round 1</h2>
+
+  <div class="reactions">
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">Enterprise Buyer</span>
+        <span class="reaction-meta">Positive · 0.78 confidence</span>
+      </div>
+      <div class="reaction-body">"Anthropic's ready-to-run AI agents for finance could streamline our reporting and modeling—worth piloting to gauge ROI."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">Retail Investor</span>
+        <span class="reaction-meta">Positive · 0.88 confidence</span>
+      </div>
+      <div class="reaction-body">"Extremely excited by integration breadth into Excel, PowerPoint, and Outlook with FactSet, Morningstar, Moody's data—clear bullish signal."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">OpenAI Engineer</span>
+        <span class="reaction-meta">Neutral · 0.78 confidence</span>
+      </div>
+      <div class="reaction-body">"Bold move, but they still lag behind our integrated AI stack in flexibility, cost, and enterprise control."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">Banking CTO</span>
+        <span class="reaction-meta">Positive · 0.86 confidence</span>
+      </div>
+      <div class="reaction-body">"Exciting to see ready-to-run AI agents for finance, especially Office add-ins and data integrations—potential to boost workflow efficiency."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">AI Safety Advocate</span>
+        <span class="reaction-meta">Negative · 0.87 confidence</span>
+      </div>
+      <div class="reaction-body">"Deep integration of AI agents into core finance workflows raises red flags about model opacity and systemic risk; thorough risk reviews needed."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">Fintech Founder</span>
+        <span class="reaction-meta">Positive · 0.87 confidence</span>
+      </div>
+      <div class="reaction-body">"Ready-to-run AI agent suite for finance is a huge signal—we should start building complementary Claude-powered tools now."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">WallStreet Analyst</span>
+        <span class="reaction-meta">Positive · 0.87 confidence</span>
+      </div>
+      <div class="reaction-body">"Launch of ready-to-run AI agents for finance, backed by data ties to FactSet, Moody's and big-ticket clients, looks set to unlock significant new revenue streams."</div>
+    </div>
+
+    <div class="reaction">
+      <div class="reaction-header">
+        <span class="reaction-agent">Enterprise Developer</span>
+        <span class="reaction-meta">Positive · 0.92 confidence</span>
+      </div>
+      <div class="reaction-body">"Ready-to-run AI agent templates for finance, integrated via Office add-ins and backed by data partners, could dramatically speed our workflow automation."</div>
+    </div>
+  </div>
+
+  <h2 style="font-size: 18px; margin-bottom: 16px;">Key Themes Extracted</h2>
+  <div class="themes">
+    <div class="theme-item">
+      <div class="theme-icon">1</div>
+      <div class="theme-text"><div class="theme-label">Enterprise Interest</div><div class="theme-desc">6 of 8 agents saw clear operational value. CTOs and buyers want to pilot. The Office 365 integration removes adoption friction.</div></div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-icon">2</div>
+      <div class="theme-text"><div class="theme-label">Investor Enthusiasm</div><div class="theme-desc">Retail investors and Wall Street analysts both reacted with buy/research signals. Integration breadth = revenue narrative.</div></div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-icon">3</div>
+      <div class="theme-text"><div class="theme-label">Safety Red Flags</div><div class="theme-desc">AI Safety Advocates raised systemic risk concerns. This is a reputational headwind Anthropic must address proactively.</div></div>
+    </div>
+    <div class="theme-item">
+      <div class="theme-icon">4</div>
+      <div class="theme-text"><div class="theme-label">Competitor Dismissal</div><div class="theme-desc">OpenAI Engineer downplayed significance. Competitors will claim their stack is "more integrated" — narrative battle ahead.</div></div>
+    </div>
+  </div>
+
+  <h2 style="font-size: 18px; margin-bottom: 16px;">Round-by-Round Evolution</h2>
+  <div style="background: var(--color-surface-raised); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px; margin-bottom: 32px; font-size: 13px; color: var(--color-text-muted);">
+    <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Initial Reaction (R1)</span><span>6 🟢 · 1 ⚪ · 1 🔴</span></div>
+    <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Peered Discussion (R2)</span><span>6 🟢 · 1 ⚪ · 1 🔴</span></div>
+    <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Consolidated View (R3)</span><span>5 🟢 · 2 ⚪ · 1 🔴</span></div>
+    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-border); color: var(--color-text);">
+      Sentiment stabilized at ~70% positive. Slight softening in R3 as safety concerns and competitor narratives gained minor traction. No polarization escalation.
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by Prism Intel simulation engine · <a href="https://github.com/facelessmagister" style="color: var(--color-accent);" target="_blank">github.com/facelessmagister</a><br>
+    Using gpt-oss:120b-cloud via Ollama · 8 sociological personas · JSON-structured output
+  </div>
+</div>
+</body>
+</html>

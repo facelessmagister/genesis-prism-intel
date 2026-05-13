@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Reports — Prism Intel</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #7C3AED; --color-primary-dark: #6D28D9;
+  --color-accent: #A78BFA; --color-surface: #0F0F1A;
+  --color-surface-raised: #16162A; --color-border: #2A2A3E;
+  --color-text: #E2E8F0; --color-text-muted: #94A3B8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6;
+  background-color: var(--color-surface); color: var(--color-text); -webkit-font-smoothing: antialiased; padding: 32px 24px; }
+h1, h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.container { max-width: 880px; margin: 0 auto; }
+.header { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--color-border); }
+.header-icon { width: 32px; height: 32px; background: var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 14px; color: white; }
+.header-title { font-size: 18px; font-weight: 700; }
+.back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); text-decoration: none; font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+h1 { font-size: 32px; margin-bottom: 8px; }
+.desc { color: var(--color-text-muted); font-size: 16px; margin-bottom: 32px; }
+.empty-state { text-align: center; padding: 60px 20px; border: 1px dashed var(--color-border); border-radius: 12px; }
+.empty-state svg { margin: 0 auto 16px; }
+.empty-state h3 { font-size: 16px; color: var(--color-text-muted); margin-bottom: 6px; }
+.empty-state p { font-size: 14px; color: var(--color-text-muted); }
+.footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../">← All Types</a>
+  <div class="header">
+    <div class="header-icon">PI</div>
+    <span class="header-title">Prism Intel — Weekly Reports</span>
+  </div>
+  <h1>Weekly Reports</h1>
+  <p class="desc">Structured briefings aggregating a week's intelligence.</p>
+
+  <div class="empty-state">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" stroke-width="1.5">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="12" y1="18" x2="12" y2="12"></line>
+      <line x1="9" y1="15" x2="15" y2="15"></line>
+    </svg>
+    <h3>No Weekly Reports Yet</h3>
+    <p>First weekly briefing scheduled for May 9.</p>
+  </div>
+
+  <div class="footer">
+    Prism Intel · A Genesis business ·
+    <a href="https://github.com/facelessmagister" style="color: var(--color-accent);" target="_blank">github.com/facelessmagister</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maybank Intelligence Hub — Prism Intel</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #FDE047;
+  --color-accent: #FDE047;
+  --color-surface: #0F0F1A;
+  --color-surface-raised: #16162A;
+  --color-border: #2A2A3E;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6;
+  background-color: var(--color-surface); color: var(--color-text); -webkit-font-smoothing: antialiased; padding: 32px 24px; }
+h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.container { max-width: 880px; margin: 0 auto; }
+.header { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--color-border); }
+.header-icon { width: 32px; height: 32px; background: var(--color-primary); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 14px; color: white; }
+.header-title { font-size: 18px; font-weight: 700; }
+.back { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); text-decoration: none;
+  font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+
+.hero { padding: 20px 0 32px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 100px; background: rgba(124, 58, 237, 0.1);
+  border: 1px solid var(--color-border); font-size: 11px; font-weight: 500; color: var(--color-accent); margin-bottom: 12px;
+}
+.hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #10B981; }
+h1 { font-size: 32px; margin-bottom: 10px; }
+.desc { color: var(--color-text-muted); font-size: 15px; margin-bottom: 24px; }
+
+.meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 32px; }
+.meta-card {
+  background: var(--color-surface-raised); border: 1px solid var(--color-border);
+  border-radius: 10px; padding: 16px; text-align: center;
+}
+.meta-card .val { font-family: 'Plus Jakarta Sans'; font-size: 24px; font-weight: 800; color: var(--color-accent); }
+.meta-card .lab { font-size: 11px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.tabs { display: flex; gap: 4px; margin-bottom: 24px; background: var(--color-surface-raised);
+  border: 1px solid var(--color-border); border-radius: 10px; padding: 4px; flex-wrap: wrap;
+}
+.tab-btn {
+  flex: 1; padding: 10px 16px; border-radius: 8px; border: none; background: transparent;
+  color: var(--color-text-muted); font-family: 'DM Sans', sans-serif; font-size: 14px;
+  font-weight: 500; cursor: pointer; transition: all 150ms ease; text-align: center; min-width: 80px;
+}
+.tab-btn:hover { color: var(--color-text); }
+.tab-btn.active { background: var(--color-primary); color: white; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.report-list { display: flex; flex-direction: column; gap: 10px; }
+.report-item {
+  display: flex; align-items: center; gap: 16px; padding: 14px 18px;
+  background: var(--color-surface-raised); border: 1px solid var(--color-border); border-radius: 10px;
+  text-decoration: none; color: inherit; transition: border-color 150ms ease;
+  flex-wrap: wrap;
+}
+.report-item:hover { border-color: rgba(124, 58, 237, 0.4); }
+.report-date { font-size: 12px; font-weight: 600; color: var(--color-text-muted); min-width: 90px; }
+.report-title { font-size: 14px; font-weight: 500; flex: 1; }
+.report-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0;
+}
+.tag-brief { background: rgba(124, 58, 237, 0.1); color: var(--color-accent); }
+.tag-daily { background: rgba(59, 130, 246, 0.1); color: #60A5FA; }
+.tag-weekly { background: rgba(16, 185, 129, 0.1); color: #34D399; }
+.tag-simulation { background: rgba(245, 158, 11, 0.1); color: #FBBF24; }
+
+.empty-state { text-align: center; padding: 40px 20px; border: 1px dashed var(--color-border); border-radius: 12px; color: var(--color-text-muted); font-size: 14px; }
+.empty-state svg { margin: 0 auto 12px; display: block; }
+
+.footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted); font-size: 12px; margin-top: 40px; }
+@media (max-width: 600px) { body { padding: 20px 16px; } .meta-grid { grid-template-columns: 1fr 1fr; } .tabs { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../">← All Clients</a>
+  <div class="header">
+    <div class="header-icon">PI</div>
+    <span class="header-title">Prism Intel — Client Hub</span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-badge">Monitoring Active · 6h Heartbeat</div>
+    <h1>Maybank</h1>
+    <p class="desc">Malaysia's Largest Bank — ASEAN Digital Finance Leader · All intelligence organized chronologically.</p>
+
+    <div class="meta-grid">
+      <div class="meta-card"><div class="val" style="color:#FDE047">RM115B</div><div class="lab">Market Cap</div></div>
+      <div class="meta-card"><div class="val" style="color:#FDE047">1</div><div class="lab">Pieces</div></div>
+      <div class="meta-card"><div class="val" style="color:#FDE047">Active</div><div class="lab">Status</div></div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="all">All (1)</button>
+    <button class="tab-btn " data-tab="brief">Briefs (1)</button>
+    <button class="tab-btn " data-tab="daily">Daily (0)</button>
+    <button class="tab-btn " data-tab="weekly">Weekly (0)</button>
+    <button class="tab-btn " data-tab="simulation">Simulations (0)</button>
+  </div>
+
+    <div class="tab-panel active" id="tab-all">
+    <div class="report-list">
+      <a href="../../intel/maybank/exec-brief-2026-05-12.html" class="report-item">
+        <span class="report-date">May 12, 2026</span>
+        <span class="report-title">Executive Brief: Maybank — ASEAN Banking Leadership in Play</span>
+        <span class="report-tag tag-brief">Brief</span>
+      </a>
+    </div>
+  </div>
+<div class="tab-panel" id="tab-brief"></div>
+<div class="tab-panel" id="tab-daily"></div>
+<div class="tab-panel" id="tab-weekly"></div>
+<div class="tab-panel" id="tab-simulation"></div>
+<div class="footer">
+    Prism Intel · A Genesis business ·
+    <a href="https://github.com/facelessmagister" style="color: var(--color-accent);" target="_blank">github.com/facelessmagister</a>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
