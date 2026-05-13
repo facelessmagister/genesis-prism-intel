@@ -1,10 +1,12 @@
 {
-  "site_url": "https://website-dun-six-50.vercel.app",
-  "production_url": "https://genesis-prism-intel-8m767sckb-facelessmagister-9996s-projects.vercel.app",
+  "site_url": "https://genesis-prism-intel.vercel.app",
+  "production_url": "https://genesis-prism-intel.vercel.app",
   "vercel_project_id": "prj_UqDYggi0rWnwCKNwYP8SOdZGExwL",
   "vercel_org": "facelessmagister-9996s-projects",
   "project_name": "genesis-prism-intel",
-  "deployed_at": "2026-05-09T17:20:00+08:00",
+  "github_repo": "facelessmagister/genesis-prism-intel",
+  "github_repo_id": 1237247636,
+  "deployed_at": "2026-05-13",
   "status": "live",
-  "note": "genesis-prism-intel.vercel.app is team-scoped (401 without auth). The public alias website-dun-six-50.vercel.app is the canonical access URL."
+  "note": "Auto-deploy enabled: push to master → Vercel deploy"
 }
