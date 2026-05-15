@@ -1,190 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Executive Brief: Anthropic — 20 | Prism Intel</title>
+<title>Anthropic Executive Brief — Week 20 | Prism Intel</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --color-primary:#7C3AED;--color-primary-dark:#6D28D9;--color-secondary:#475569;
-  --color-accent:#A78BFA;--color-surface:#0F0F1A;--color-surface-raised:#16162A;
-  --color-border:#2A2A3E;--color-text:#E2E8F0;--color-text-muted:#94A3B8;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;background:var(--color-surface);color:var(--color-text);-webkit-font-smoothing:antialiased;padding:32px 24px}
-h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;line-height:1.3}
-.container{max-width:720px;margin:0 auto}
-.header{display:flex;align-items:center;gap:10px;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--color-border)}
-.header-icon{width:32px;height:32px;background:var(--color-primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;color:white}
-.header-title{font-size:18px;font-weight:700}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:100px;background:rgba(124,58,237,0.1);border:1px solid var(--color-border);font-size:12px;font-weight:500;color:var(--color-accent);margin-bottom:16px}
-h1{font-size:28px;letter-spacing:-0.02em;margin-bottom:10px}
-.meta{font-size:13px;color:var(--color-text-muted);margin-bottom:28px}
-.section{margin-bottom:32px;padding-top:16px;border-top:1px solid var(--color-border)}
-.section:first-of-type{border-top:none}
-h2{font-size:20px;margin-bottom:16px;color:var(--color-accent)}
-h3{font-size:17px;margin:20px 0 10px;color:var(--color-text)}
-p{margin-bottom:12px}
-ul{margin-left:20px;color:var(--color-text-muted)}
-.back{display:inline-flex;align-items:center;gap:6px;color:var(--color-accent);text-decoration:none;font-size:13px;font-weight:500;margin-bottom:20px}
-.footer{text-align:center;padding-top:24px;border-top:1px solid var(--color-border);color:var(--color-text-muted);font-size:12px;margin-top:40px}
-@media(max-width:600px){.scorecards{grid-template-columns:1fr 1fr !important}}
+:root { --primary: #7C3AED; --surface: #0a0a0f; --surface-2: #12121e; --border: #1e1e2e; --text: #e2e8f0; --text-muted: #94a3b8; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--surface); color: var(--text); line-height: 1.6; }
+h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+.hero { padding: 32px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+.hero-top { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); font-size: 12px; font-weight: 500; color: var(--text-muted); }
+.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #10b981; }
+h1 { font-size: 40px; letter-spacing: -0.02em; margin-bottom: 8px; }
+.hero-sub { color: var(--text-muted); font-size: 16px; margin-bottom: 28px; }
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+.metric-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+.metric-val { font-family: 'Plus Jakarta Sans'; font-size: 28px; font-weight: 800; }
+.metric-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.section h2::before { content: ''; width: 4px; height: 24px; border-radius: 2px; background: var(--primary); }
+.takeaway-card { display: flex; gap: 16px; padding: 20px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; }
+.takeaway-num { width: 40px; height: 40px; border-radius: 10px; background: var(--primary); display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 16px; color: #fff; flex-shrink: 0; }
+.takeaway-headline { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+.takeaway-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); }
+.topic-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 100px; background: var(--surface-2); border: 1px solid var(--border); font-size: 13px; margin: 0 8px 8px 0; }
+.topic-count { background: var(--primary); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+.story-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.story-table th { text-align: left; padding: 12px 16px; color: var(--text-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+.story-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.story-table tr:hover td { background: rgba(255,255,255,0.02); }
+.idx { color: var(--text-muted); font-weight: 600; width: 40px; }
+.story-title { font-weight: 500; }
+.topic-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(124,58,237,0.1); color: #a78bfa; font-size: 11px; font-weight: 600; text-transform: capitalize; }
+.conf { font-weight: 700; font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+.conf.high { background: rgba(16,185,129,0.1); color: #34d399; }
+.conf.medium { background: rgba(245,158,11,0.1); color: #fbbf24; }
+.conf.low { background: rgba(239,68,68,0.1); color: #f87171; }
+.sources { color: var(--text-muted); font-size: 12px; max-width: 180px; }
+.footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; }
+.footer a { color: var(--primary); text-decoration: none; }
+@media (max-width: 768px) { .metric-grid { grid-template-columns: 1fr; } .takeaway-card { flex-direction: column; } }
 </style>
 </head>
 <body>
 <div class="container">
-  <a class="back" href="../../index.html">← Back to Prism Intel</a>
-  <div class="header">
-    <div class="header-icon">PI</div>
-    <span class="header-title">Prism Intel — Executive Brief</span>
-  </div>
-  <div class="badge">Client: Anthropic</div>
-  <h1>Top Anthropic signal: Anthropic releases Claude Opus 4.7, a less risky model than Mythos - CNBC — is a product signal.</h1>
-  <div class="meta">Week 20 (2026-05-11 → 2026-05-17) · Prepared by Hermes CEO, Genesis</div>
-
-  <div class="section">
-    <h2>Confidence-Scored Takeaways</h2>
-    <ul style="list-style:none;margin-left:0;">
-      
-          <li style="padding:12px 0;border-bottom:1px solid #2A2A3E;display:flex;gap:12px;align-items:flex-start;">
-            <span style="padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap;background:rgba(16,185,129,0.15);color:#34D399">HIGH</span>
-            <span style="font-size:14px;color:#E2E8F0;line-height:1.5;">🟣 Anthropic releases Claude Opus 4.7, a less risky model than Mythos - CNBC — is a product signal.</span>
-          </li>
-          <li style="padding:12px 0;border-bottom:1px solid #2A2A3E;display:flex;gap:12px;align-items:flex-start;">
-            <span style="padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap;background:rgba(16,185,129,0.15);color:#34D399">HIGH</span>
-            <span style="font-size:14px;color:#E2E8F0;line-height:1.5;">🟣 Anthropic releases Claude Opus 4.7 with benchmark-leading coding and ... — is a product signal.</span>
-          </li>
-          <li style="padding:12px 0;border-bottom:1px solid #2A2A3E;display:flex;gap:12px;align-items:flex-start;">
-            <span style="padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap;background:rgba(16,185,129,0.15);color:#34D399">HIGH</span>
-            <span style="font-size:14px;color:#E2E8F0;line-height:1.5;">🟣 Release notes | Claude Help Center — is a product signal.</span>
-          </li>
-          <li style="padding:12px 0;border-bottom:1px solid #2A2A3E;display:flex;gap:12px;align-items:flex-start;">
-            <span style="padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap;background:rgba(16,185,129,0.15);color:#34D399">HIGH</span>
-            <span style="font-size:14px;color:#E2E8F0;line-height:1.5;">⚪ AI in April 2026: Biggest Breakthroughs, Models & Industry Shifts — watch for competitive ripple effects.</span>
-          </li>
-          <li style="padding:12px 0;border-bottom:1px solid #2A2A3E;display:flex;gap:12px;align-items:flex-start;">
-            <span style="padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap;background:rgba(16,185,129,0.15);color:#34D399">HIGH</span>
-            <span style="font-size:14px;color:#E2E8F0;line-height:1.5;">⚪ xAI No More? Elon Musk Confirms This Change Coming To His AI Company — watch for competitive ripple effects.</span>
-          </li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Competitor Scorecard</h2>
-    <div class="scorecards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px;">
-      
-        <div style="background:#16162A;border:1px solid #2A2A3E;border-radius:12px;padding:20px;">
-          <div style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#E2E8F0;margin-bottom:12px;">Anthropic</div>
-          <table style="width:100%;border-collapse:collapse;font-size:13px;"><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Valuation</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Enterprise</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Model</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Compute</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr></table>
-        </div>
-        
-        <div style="background:#16162A;border:1px solid #2A2A3E;border-radius:12px;padding:20px;">
-          <div style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#E2E8F0;margin-bottom:12px;">Openai</div>
-          <table style="width:100%;border-collapse:collapse;font-size:13px;"><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Valuation</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#EF4444;">↘️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Enterprise</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Model</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Compute</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr></table>
-        </div>
-        
-        <div style="background:#16162A;border:1px solid #2A2A3E;border-radius:12px;padding:20px;">
-          <div style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#E2E8F0;margin-bottom:12px;">Google</div>
-          <table style="width:100%;border-collapse:collapse;font-size:13px;"><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Valuation</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Enterprise</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Model</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Compute</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr></table>
-        </div>
-        
-        <div style="background:#16162A;border:1px solid #2A2A3E;border-radius:12px;padding:20px;">
-          <div style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:14px;color:#E2E8F0;margin-bottom:12px;">Xai</div>
-          <table style="width:100%;border-collapse:collapse;font-size:13px;"><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Valuation</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Enterprise</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Model</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#94A3B8;">➡️</td></tr><tr><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:13px;color:#E2E8F0;">Compute</td><td style="padding:8px 12px;border-bottom:1px solid #2A2A3E;font-size:18px;text-align:center;color:#34D399;">↗️</td></tr></table>
-        </div>
-        
+  <div class="hero">
+    <div class="hero-top">
+      <div class="hero-badge">Week 20 · 2026-05-11 → 2026-05-17</div>
+      <div class="hero-badge">8 feeds · 5 days · 329 signals</div>
     </div>
-    <p style="font-size:13px;color:var(--color-text-muted)">↗️ Gaining ground · ↘️ Losing ground · ➡️ Stable</p>
+    <h1>Anthropic Executive Brief</h1>
+    <p class="hero-sub">Enterprise-First AI Safety · Competitive intelligence synthesized for decision-makers.</p>
+    <div class="metric-grid"><div class="metric-card"><div class="metric-val" style="color:#7C3AED">$380B–$900B</div><div class="metric-label">Valuation</div></div><div class="metric-card"><div class="metric-val" style="color:#7C3AED">Claude, Opus, Mythos</div><div class="metric-label">Products</div></div><div class="metric-card"><div class="metric-val" style="color:#7C3AED">San Francisco</div><div class="metric-label">HQ</div></div>
+      <div class="metric-card"><div class="metric-val" style="color:var(--primary)">15</div><div class="metric-label">Top Signals</div></div>
+      <div class="metric-card"><div class="metric-val" style="color:#ef4444">16</div><div class="metric-label">Sim Triggers</div></div>
+    </div>
   </div>
-
   <div class="section">
-    <h2>Actionable Steps</h2>
-    
-          <div style="padding:16px;background:#16162A;border:1px solid #2A2A3E;border-radius:8px;margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;color:#A78BFA;">Step 1</span>
-              <span style="font-size:12px;color:#94A3B8;">Next week</span>
-            </div>
-            <p style="font-size:14px;color:#E2E8F0;margin:0;">Anthropic signal: Anthropic releases Claude Opus 4.7, a less risky model than Mythos - CNBC — is a</p>
-            <span style="font-size:12px;color:#94A3B8;margin-top:4px;display:inline-block;">Owner: Strategy</span>
-          </div>
-          <div style="padding:16px;background:#16162A;border:1px solid #2A2A3E;border-radius:8px;margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;color:#A78BFA;">Step 2</span>
-              <span style="font-size:12px;color:#94A3B8;">Next week</span>
-            </div>
-            <p style="font-size:14px;color:#E2E8F0;margin:0;">Anthropic signal: Anthropic releases Claude Opus 4.7 with benchmark-leading coding and ... — is a </p>
-            <span style="font-size:12px;color:#94A3B8;margin-top:4px;display:inline-block;">Owner: Strategy</span>
-          </div>
-          <div style="padding:16px;background:#16162A;border:1px solid #2A2A3E;border-radius:8px;margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;color:#A78BFA;">Step 3</span>
-              <span style="font-size:12px;color:#94A3B8;">Next week</span>
-            </div>
-            <p style="font-size:14px;color:#E2E8F0;margin:0;">Anthropic signal: Release notes | Claude Help Center — is a product signal.</p>
-            <span style="font-size:12px;color:#94A3B8;margin-top:4px;display:inline-block;">Owner: Strategy</span>
-          </div>
-          <div style="padding:16px;background:#16162A;border:1px solid #2A2A3E;border-radius:8px;margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;color:#A78BFA;">Step 4</span>
-              <span style="font-size:12px;color:#94A3B8;">Next week</span>
-            </div>
-            <p style="font-size:14px;color:#E2E8F0;margin:0;">Competitor watch: AI in April 2026: Biggest Breakthroughs, Models & Industry Shifts — watch for co</p>
-            <span style="font-size:12px;color:#94A3B8;margin-top:4px;display:inline-block;">Owner: Strategy</span>
-          </div>
-          <div style="padding:16px;background:#16162A;border:1px solid #2A2A3E;border-radius:8px;margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-              <span style="font-family:'Plus Jakarta Sans';font-weight:700;font-size:13px;color:#A78BFA;">Step 5</span>
-              <span style="font-size:12px;color:#94A3B8;">Next week</span>
-            </div>
-            <p style="font-size:14px;color:#E2E8F0;margin:0;">Competitor watch: xAI No More? Elon Musk Confirms This Change Coming To His AI Company — watch for</p>
-            <span style="font-size:12px;color:#94A3B8;margin-top:4px;display:inline-block;">Owner: Strategy</span>
-          </div>
+    <h2>Executive Takeaways</h2>
+    <div class="takeaway-card"><div class="takeaway-num">01</div><div class="takeaway-body"><div class="takeaway-headline">Claude Opus 4.7 \ Anthropic</div><div class="takeaway-meta"><span class="topic-badge">product</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">02</div><div class="takeaway-body"><div class="takeaway-headline">Release notes | Claude Help Center</div><div class="takeaway-meta"><span class="topic-badge">product</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">03</div><div class="takeaway-body"><div class="takeaway-headline">Claude Timeline: From Claude 1, Claude Code to Claude Opus ... - ScriptByAI</div><div class="takeaway-meta"><span class="topic-badge">product</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">04</div><div class="takeaway-body"><div class="takeaway-headline">Claude (language model) - Wikipedia</div><div class="takeaway-meta"><span class="topic-badge">product</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">05</div><div class="takeaway-body"><div class="takeaway-headline">Anthropic's Claude Opus 4.7 Released: All You Need to Know</div><div class="takeaway-meta"><span class="topic-badge">product</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">06</div><div class="takeaway-body"><div class="takeaway-headline">Musk announces xAI re-org following key departures, SpaceX merger - CNBC</div><div class="takeaway-meta"><span class="topic-badge">competitive</span><span style="color:#ef4444;font-weight:600;">Monitor closely</span><span class="conf high">50% confidence</span></div></div></div><div class="takeaway-card"><div class="takeaway-num">07</div><div class="takeaway-body"><div class="takeaway-headline">Elon Musk Merges SpaceX With His A.I. Start-Up xAI</div><div class="takeaway-meta"><span class="topic-badge">competitive</span><span style="color:#10b981;font-weight:600;">Track</span><span class="conf high">50% confidence</span></div></div></div>
   </div>
-
-  
-      <div style="margin-top:32px;padding:24px;background:#16162A;border:1px solid #2A2A3E;border-radius:12px;">
-        <h3 style="color:#A78BFA;margin-bottom:16px;font-size:18px;">📊 Simulation Scorecard</h3>
-        <p style="color:#94A3B8;margin-bottom:16px;">MiroFish-Lite multi-agent sentiment simulation was triggered this week. Results aggregated across 8 personas × 3 rounds.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-          <div style="text-align:center;padding:20px;background:#0F0F1A;border-radius:8px;">
-            <div style="font-family:'Plus Jakarta Sans';font-size:32px;font-weight:800;color:#34D399;">70%</div>
-            <div style="font-size:12px;color:#94A3B8;margin-top:4px;">Positive</div>
-          </div>
-          <div style="text-align:center;padding:20px;background:#0F0F1A;border-radius:8px;">
-            <div style="font-family:'Plus Jakarta Sans';font-size:32px;font-weight:800;color:#60A5FA;">16%</div>
-            <div style="font-size:12px;color:#94A3B8;margin-top:4px;">Neutral</div>
-          </div>
-          <div style="text-align:center;padding:20px;background:#0F0F1A;border-radius:8px;">
-            <div style="font-family:'Plus Jakarta Sans';font-size:32px;font-weight:800;color:#EF4444;">12%</div>
-            <div style="font-size:12px;color:#94A3B8;margin-top:4px;">Negative</div>
-          </div>
-        </div>
-      </div>
-
-
   <div class="section">
-    <h2>Next-Week Watchlist</h2>
-    
-          <div style="padding:12px 0;border-bottom:1px solid #2A2A3E;">
-            <div style="font-weight:600;font-size:14px;color:#E2E8F0;">Anthropic blog updates (model/partnership)</div>
-            <div style="font-size:13px;color:#94A3B8;margin-top:2px;">Trigger: If announced, run MiroFish-Lite simulation</div>
-          </div>
-          <div style="padding:12px 0;border-bottom:1px solid #2A2A3E;">
-            <div style="font-weight:600;font-size:14px;color:#E2E8F0;">OpenAI trial / revenue developments</div>
-            <div style="font-size:13px;color:#94A3B8;margin-top:2px;">Trigger: If verdict or earnings miss confirmed, update scorecard</div>
-          </div>
-          <div style="padding:12px 0;border-bottom:1px solid #2A2A3E;">
-            <div style="font-weight:600;font-size:14px;color:#E2E8F0;">xAI / SpaceX restructuring clarity</div>
-            <div style="font-size:13px;color:#94A3B8;margin-top:2px;">Trigger: If IPO timeline released, reassess competitive compute landscape</div>
-          </div>
+    <h2>Topic Landscape</h2>
+    <div style="display:flex;flex-wrap:wrap;"><div class="topic-pill"><span class="topic-name">Competitive</span><span class="topic-count">36</span></div><div class="topic-pill"><span class="topic-name">Product</span><span class="topic-count">12</span></div><div class="topic-pill"><span class="topic-name">Funding</span><span class="topic-count">12</span></div></div>
   </div>
-
+  <div class="section">
+    <h2>Top Signals</h2>
+    <table class="story-table">
+      <thead><tr><th>#</th><th>Signal</th><th>Topic</th><th>Confidence</th><th>Sources</th></tr></thead>
+      <tbody><tr><td class="idx">1</td><td class="story-title">Claude Opus 4.7 \ Anthropic</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">Anthropic</td></tr><tr><td class="idx">2</td><td class="story-title">Release notes | Claude Help Center</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">support.claude.com</td></tr><tr><td class="idx">3</td><td class="story-title">Claude Timeline: From Claude 1, Claude Code to Claude Opus ... - ScriptByAI</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">scriptbyai.com</td></tr><tr><td class="idx">4</td><td class="story-title">Claude (language model) - Wikipedia</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">en.wikipedia.org</td></tr><tr><td class="idx">5</td><td class="story-title">Anthropic's Claude Opus 4.7 Released: All You Need to Know</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">felloai.com</td></tr><tr><td class="idx">6</td><td class="story-title">Every Claude Model Released Since January 2026: The Complete Timeline</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">adam.holter.com</td></tr><tr><td class="idx">7</td><td class="story-title">Claude Release History: All Models from Claude 1 to Claude 5 (2023-2026)</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">claude5.com</td></tr><tr><td class="idx">8</td><td class="story-title">Anthropic releases Claude Opus 4.7, a less risky model than Mythos - CNBC</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">CNBC</td></tr><tr><td class="idx">9</td><td class="story-title">Everything Claude Shipped in 2026: The Complete Guide</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">the-ai-corner.com</td></tr><tr><td class="idx">10</td><td class="story-title">When Is The Next Claude AI Model Coming? Here's What We Know About ...</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">thedroidguy.com</td></tr><tr><td class="idx">11</td><td class="story-title">Anthropic Overtakes OpenAI: The 2026 AI Market Shift - Geeky Gadgets</td><td><span class="topic-badge">competitive</span></td><td><span class="conf medium">50%</span></td><td class="sources">geeky-gadgets.com</td></tr><tr><td class="idx">12</td><td class="story-title">The Enterprise AI Pivot: How OpenAI, Anthropic, and LangChain Are ... - MSN</td><td><span class="topic-badge">competitive</span></td><td><span class="conf medium">50%</span></td><td class="sources">MSN</td></tr><tr><td class="idx">13</td><td class="story-title">AI in April 2026: Biggest Breakthroughs, Models & Industry Shifts</td><td><span class="topic-badge">product</span></td><td><span class="conf medium">50%</span></td><td class="sources">kersai.com</td></tr><tr><td class="idx">14</td><td class="story-title">OpenAI's 2026 Enterprise AI Comeback: Strategic Shifts and Revenue ...</td><td><span class="topic-badge">competitive</span></td><td><span class="conf medium">50%</span></td><td class="sources">ainvest.com</td></tr><tr><td class="idx">15</td><td class="story-title">OpenAI's $1 Trillion IPO: Everything We Know in 2026</td><td><span class="topic-badge">funding</span></td><td><span class="conf medium">50%</span></td><td class="sources">technerdo.com</td></tr></tbody>
+    </table>
+  </div>
   <div class="footer">
-    Prepared by Hermes CEO, Genesis · <a href="https://github.com/facelessmagister" style="color:var(--color-accent);" target="_blank">github.com/facelessmagister</a><br>
-    Intelligence gathered via DDG Lite, Jina AI, SEC JSON API · No external API keys used
+    Prism Intel · Week 20 · Generated 2026-05-15 08:54 UTC · 
+    <a href="https://github.com/facelessmagister" target="_blank">Genesis</a>
   </div>
 </div>
 </body>
