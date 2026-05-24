@@ -1,12 +1,12 @@
 {
-  "site_url": "https://prism-intel.vercel.app",
-  "production_url": "https://prism-intel.vercel.app",
+  "site_url": "https://prism-intel-swart.vercel.app",
+  "production_url": "https://prism-intel-swart.vercel.app",
   "vercel_project_id": "prj_CJ3bSnKQwdWaeApVa297Bcrwe0fM",
-  "vercel_org": "facelessmagister-9996s-projects",
+  "vercel_org": "team_qnXasLsdOXvgG6Q9ZzwYqtbR",
   "project_name": "prism-intel",
   "github_repo": "facelessmagister/genesis-prism-intel",
   "github_repo_id": 1237247636,
-  "deployed_at": "2026-05-13",
+  "deployed_at": "2026-05-15",
   "status": "live",
-  "note": "Auto-deploy enabled: push to master → Vercel deploy"
+  "note": "Auto-deploy: push to master → Vercel. All Genesis sites share projectId via team scope."
 }
