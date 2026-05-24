@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prism Intel — Daily Executive Brief | 2026-05-24</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #7C3AED;
+  --color-accent: #A78BFA;
+  --color-surface: #0F0F1A;
+  --color-surface-raised: #16162A;
+  --color-surface-hover: #1E1E3A;
+  --color-border: #2A2A3E;
+  --color-text: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+  --color-success: #10B981;
+  --color-warning: #FBBF24;
+  --color-danger: #EF4444;
+  --color-info: #60A5FA;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--color-surface);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-brand { display: flex; align-items: center; gap: 12px; }
+.header-icon {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800; font-size: 16px; color: white;
+}
+.header-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--color-text);
+}
+.header-subtitle { font-size: 13px; color: var(--color-text-muted); margin-top: 2px; }
+.header-meta { text-align: right; }
+.header-date {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px; font-weight: 600; color: var(--color-text);
+}
+.header-issue { font-size: 12px; color: var(--color-text-muted); margin-top: 4px; }
+
+.section { margin-bottom: 40px; }
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title::before {
+  content: ''; width: 4px; height: 16px;
+  background: var(--color-primary); border-radius: 2px;
+}
+
+.exec-summary {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 12px; padding: 24px;
+}
+.exec-summary-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.exec-summary-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--color-text);
+}
+.exec-summary-badge {
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.badge-critical {
+  background: rgba(239, 68, 68, 0.15); color: var(--color-danger);
+}
+.badge-warning {
+  background: rgba(251, 191, 36, 0.15); color: var(--color-warning);
+}
+.badge-info {
+  background: rgba(96, 165, 250, 0.15); color: var(--color-info);
+}
+
+.priority-list { list-style: none; }
+.priority-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 0; border-bottom: 1px solid var(--color-border);
+}
+.priority-item:last-child { border-bottom: none; padding-bottom: 0; }
+.priority-icon { font-size: 20px; line-height: 1; margin-top: 2px; }
+.priority-content { flex: 1; }
+.priority-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 600; color: var(--color-text);
+  margin-bottom: 4px;
+}
+.priority-description {
+  font-size: 13px; color: var(--color-text-muted); line-height: 1.6;
+}
+
+.client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.client-card {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.client-card:hover { border-color: var(--color-primary); }
+.client-header {
+  padding: 20px; display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.client-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 14px; color: white;
+}
+.client-icon.anthropic { background: #7C3AED; }
+.client-icon.maybank { background: #D4AF37; }
+.client-icon.nvidia { background: #76B900; }
+.client-info { flex: 1; }
+.client-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px; font-weight: 700; color: var(--color-text);
+}
+.client-signals { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; }
+.client-body { padding: 16px 20px; }
+.signal-list { list-style: none; }
+.signal-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(42, 42, 62, 0.5);
+}
+.signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+.signal-badge {
+  padding: 2px 8px; border-radius: 100px;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  white-space: nowrap; margin-top: 2px;
+}
+.badge-high { background: rgba(16, 185, 129, 0.15); color: var(--color-success); }
+.badge-medium { background: rgba(96, 165, 250, 0.15); color: var(--color-info); }
+.badge-low { background: rgba(148, 163, 184, 0.15); color: var(--color-text-muted); }
+.signal-text { font-size: 13px; color: var(--color-text); line-height: 1.5; }
+.signal-source { font-size: 11px; color: var(--color-text-dim); margin-top: 2px; }
+
+.story-card {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 12px; padding: 24px; margin-bottom: 16px;
+}
+.story-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.story-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px; font-weight: 700; color: var(--color-text);
+}
+.story-meta { display: flex; align-items: center; gap: 12px; }
+.story-confidence {
+  padding: 3px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 600;
+}
+.confidence-high {
+  background: rgba(16, 185, 129, 0.15); color: var(--color-success);
+}
+.confidence-medium {
+  background: rgba(96, 165, 250, 0.15); color: var(--color-info);
+}
+.story-sources { font-size: 12px; color: var(--color-text-muted); }
+.story-content {
+  font-size: 14px; color: var(--color-text-muted);
+  line-height: 1.7; margin-bottom: 16px;
+}
+.story-implication {
+  background: rgba(124, 58, 237, 0.08);
+  border-left: 3px solid var(--color-primary);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px; color: var(--color-text); line-height: 1.6;
+}
+.story-implication strong { color: var(--color-accent); }
+
+.action-list { list-style: none; }
+.action-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px; margin-bottom: 12px;
+}
+.action-number {
+  width: 28px; height: 28px;
+  background: var(--color-primary); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700; font-size: 13px; color: white;
+  flex-shrink: 0;
+}
+.action-content { flex: 1; }
+.action-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.action-urgency {
+  padding: 2px 8px; border-radius: 100px;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.urgency-urgent { background: rgba(239, 68, 68, 0.15); color: var(--color-danger); }
+.urgency-prepare { background: rgba(251, 191, 36, 0.15); color: var(--color-warning); }
+.urgency-monitor { background: rgba(96, 165, 250, 0.15); color: var(--color-info); }
+.action-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 600; color: var(--color-text);
+}
+.action-description {
+  font-size: 13px; color: var(--color-text-muted); line-height: 1.5;
+}
+
+.footer {
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center; color: var(--color-text-dim); font-size: 12px;
+}
+.footer-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; color: var(--color-text-muted); margin-bottom: 8px;
+}
+.footer-links { display: flex; justify-content: center; gap: 16px; margin-top: 8px; }
+.footer-links a { color: var(--color-accent); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .client-grid { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .header-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">
+      <div class="header-icon">PI</div>
+      <div>
+        <div class="header-title">Prism Intel</div>
+        <div class="header-subtitle">Daily Executive Brief</div>
+      </div>
+    </div>
+    <div class="header-meta">
+      <div class="header-date">2026-05-24</div>
+      <div class="header-issue">Issue #1 · Sunday</div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <div class="section-title">Executive Summary</div>
+    <div class="exec-summary">
+      <div class="exec-summary-header">
+        <div class="exec-summary-title">3-Minute Brief</div>
+        <div class="exec-summary-badge badge-critical">6 Actions Required</div>
+      </div>
+      <ul class="priority-list">
+        
+        <li class="priority-item">
+          <span class="priority-icon">🔴</span>
+          <div class="priority-content">
+            <div class="priority-headline">CRITICAL: xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending ...</div>
+            <div class="priority-description">xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending .... Cross-source score: 2. Monitor for strategic impact.</div>
+          </div>
+        </li>
+        <li class="priority-item">
+          <span class="priority-icon">🟡</span>
+          <div class="priority-content">
+            <div class="priority-headline">WATCH: Exclusive-Grok Falls Flat in Washington, Undercutting SpaceX's AI ...</div>
+            <div class="priority-description">Exclusive-Grok Falls Flat in Washington, Undercutting SpaceX's AI .... Confidence: 50%.</div>
+          </div>
+        </li>
+        <li class="priority-item">
+          <span class="priority-icon">🟡</span>
+          <div class="priority-content">
+            <div class="priority-headline">WATCH: xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending ...</div>
+            <div class="priority-description">xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending .... Confidence: 50%.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CLIENT SIGNAL OVERVIEW -->
+  <div class="section">
+    <div class="section-title">Client Signal Overview</div>
+    <div class="client-grid">
+      
+      <div class="client-card">
+        <div class="client-header">
+          <div class="client-icon anthropic">A</div>
+          <div class="client-info">
+            <div class="client-name">Anthropic</div>
+            <div class="client-signals">10 signals · COMPETITIVE focus</div>
+          </div>
+        </div>
+        <div class="client-body">
+          <ul class="signal-list">
+            
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">Exclusive-Grok Falls Flat in Washington, Undercutting SpaceX's AI ...</div>
+                <div class="signal-source">usnews.com</div>
+              </div>
+            </li>
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending ...</div>
+                <div class="signal-source">TechCrunch</div>
+              </div>
+            </li>
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">'Financials look reckless': Lifting the xAI hood in the SpaceX IPO</div>
+                <div class="signal-source">pitchbook.com</div>
+              </div>
+            </li>
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">Grok Could Undermine SpaceX IPO - 24/7 Wall St.</div>
+                <div class="signal-source">247wallst.com</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="client-header">
+          <div class="client-icon maybank">M</div>
+          <div class="client-info">
+            <div class="client-name">Maybank</div>
+            <div class="client-signals">1 signals · GENERAL focus</div>
+          </div>
+        </div>
+        <div class="client-body">
+          <ul class="signal-list">
+            
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">No signals today</div>
+                
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="client-header">
+          <div class="client-icon nvidia">N</div>
+          <div class="client-info">
+            <div class="client-name">NVIDIA</div>
+            <div class="client-signals">1 signals · GENERAL focus</div>
+          </div>
+        </div>
+        <div class="client-body">
+          <ul class="signal-list">
+            
+            <li class="signal-item">
+              <span class="signal-badge badge-medium">MED</span>
+              <div>
+                <div class="signal-text">No signals today</div>
+                
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERNIGHT INTELLIGENCE -->
+  <div class="section">
+    <div class="section-title">Overnight Intelligence</div>
+    
+    <div class="story-card">
+      
+      <div class="story-header">
+        <div class="story-title">Exclusive-Grok Falls Flat in Washington, Undercutting SpaceX's AI ...</div>
+        <div class="story-meta">
+          <span class="story-confidence confidence-medium">MEDIUM Confidence</span>
+          <span class="story-sources">usnews.com</span>
+        </div>
+      </div>
+      <div class="story-content">
+        Signal detected with 2 cross-referencing source(s). Monitoring shows this topic is trending across 1 publication(s): usnews.com.
+      </div>
+      <div class="story-implication">
+        <strong>Why this matters:</strong> Direct competitive signal. Anthropic should assess defensive positioning or offensive opportunity.
+      </div>
+    </div>
+    <div class="story-card">
+      <div style="margin-bottom:12px;padding:8px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:6px;display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">CRITICAL</span><span style="font-size:12px;font-weight:600;color:#EF4444;">SIGNAL</span></div>
+      <div class="story-header">
+        <div class="story-title">xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending ...</div>
+        <div class="story-meta">
+          <span class="story-confidence confidence-medium">MEDIUM Confidence</span>
+          <span class="story-sources">TechCrunch</span>
+        </div>
+      </div>
+      <div class="story-content">
+        Signal detected with 2 cross-referencing source(s). Monitoring shows this topic is trending across 1 publication(s): TechCrunch.
+      </div>
+      <div class="story-implication">
+        <strong>Why this matters:</strong> Direct competitive signal. Anthropic should assess defensive positioning or offensive opportunity.
+      </div>
+    </div>
+    <div class="story-card">
+      <div style="margin-bottom:12px;padding:8px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:6px;display:flex;align-items:center;gap:8px;"><span style="font-size:14px;">CRITICAL</span><span style="font-size:12px;font-weight:600;color:#EF4444;">SIGNAL</span></div>
+      <div class="story-header">
+        <div class="story-title">'Financials look reckless': Lifting the xAI hood in the SpaceX IPO</div>
+        <div class="story-meta">
+          <span class="story-confidence confidence-medium">MEDIUM Confidence</span>
+          <span class="story-sources">pitchbook.com</span>
+        </div>
+      </div>
+      <div class="story-content">
+        Signal detected with 2 cross-referencing source(s). Monitoring shows this topic is trending across 1 publication(s): pitchbook.com.
+      </div>
+      <div class="story-implication">
+        <strong>Why this matters:</strong> Direct competitive signal. Anthropic should assess defensive positioning or offensive opportunity.
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION ITEMS -->
+  <div class="section">
+    <div class="section-title">Today's Action Items</div>
+    <ul class="action-list">
+      
+      <li class="action-item">
+        <div class="action-number">1</div>
+        <div class="action-content">
+          <div class="action-header">
+            <span class="action-urgency urgency-urgent">URGENT</span>
+            <span class="action-title">Review: xAI burned $6.4B last year — SpaceX's IPO filing shows why the spending ...</span>
+          </div>
+          <div class="action-description">Immediate assessment required. Evaluate competitive threat level and prepare internal briefing.</div>
+        </div>
+      </li>
+      <li class="action-item">
+        <div class="action-number">2</div>
+        <div class="action-content">
+          <div class="action-header">
+            <span class="action-urgency urgency-prepare">PREPARE</span>
+            <span class="action-title">Monitor: Exclusive-Grok Falls Flat in Washington, Undercutting SpaceX's AI ...</span>
+          </div>
+          <div class="action-description">Prepare talking points and strategic response framework for upcoming leadership review.</div>
+        </div>
+      </li>
+      <li class="action-item">
+        <div class="action-number">3</div>
+        <div class="action-content">
+          <div class="action-header">
+            <span class="action-urgency urgency-monitor">MONITOR</span>
+            <span class="action-title">Continue monitoring: Anthropic</span>
+          </div>
+          <div class="action-description">Routine scan continues. Next update scheduled in 6 hours.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SOURCES & METHODOLOGY -->
+  <div class="section">
+    <div class="section-title">Sources &amp; Methodology</div>
+    <div class="story-card">
+      <div style="font-size: 13px; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 16px;">
+        <strong style="color: var(--color-text);">Sources Consulted:</strong><br>
+        [1] 247wallst.com<br>[2] TechCrunch<br>[3] Wired<br>[4] aitoolly.com<br>[5] aitoolsrecap.com<br>[6] arstechnica.com<br>[7] pitchbook.com<br>[8] socialmediatoday.com<br>[9] timesnownews.com<br>[10] usnews.com<br>
+      </div>
+      <div style="font-size: 12px; color: var(--color-text-dim); line-height: 1.6; border-top: 1px solid var(--color-border); padding-top: 16px;">
+        <strong style="color: var(--color-text-muted);">Methodology:</strong> Prism Intel monitors 2 news feeds and 10 sources daily. Stories are cross-referenced for validation and scored by source diversity. Confidence levels: HIGH (4+ converging sources), MEDIUM (2-3 sources), LOW (single source). Analysis is auto-generated and should be verified before strategic decisions.<br><br>
+        <strong style="color: var(--color-text-muted);">Gathered:</strong> 2 feeds, 10 articles | <strong>Synthesized:</strong> 10 major signals | <strong>Bias disclosure:</strong> English-language tech/finance press bias
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Prism Intel · A Genesis Business</div>
+    <div>Automated competitive intelligence · Daily at 06:00 UTC</div>
+    <div class="footer-links">
+      <a href="../../index.html">Dashboard</a>
+      <a href="../../anthropic/">Client Hub</a>
+      <a href="../../settings.html">Settings</a>
+      <a href="https://github.com/facelessmagister" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
